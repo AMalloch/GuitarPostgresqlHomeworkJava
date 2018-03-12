@@ -9,6 +9,10 @@ public class Guitarist {
 
     public Guitarist() {}
 
+    public Guitarist(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
@@ -32,4 +36,6 @@ public class Guitarist {
     public void setGuitars(Set<Guitar> guitars) {
         this.guitars = guitars;
     }
+
+
 }
