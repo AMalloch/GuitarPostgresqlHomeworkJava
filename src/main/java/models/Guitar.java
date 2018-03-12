@@ -1,6 +1,7 @@
 package models;
 
 public class Guitar {
+    private int Id;
     private String model;
     private String manufacturer;
     private int number_of_strings;
@@ -11,6 +12,14 @@ public class Guitar {
         this.model = model;
         this.manufacturer = manufacturer;
         this.number_of_strings = number_of_strings;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getModel() {
