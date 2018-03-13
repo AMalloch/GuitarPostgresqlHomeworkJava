@@ -114,13 +114,32 @@ public class DBHelper {
         return guitarists;
     }
 
-    public static <T> List<T> getObjectById(String className, int id){
+//    public static void deleteById(String className, int id){
+//        session = HibernateUtil.getSessionFactory().openSession();
+//        try{
+//            transaction = session.beginTransaction();
+//            String hql = "delete from " + className + " where id = "+ id;
+//            Query query = session.createQuery(hql);
+//            query.setInteger("id", id);
+//            query.executeUpdate();
+//            transaction.commit();
+//        } catch (HibernateException ex) {
+//            transaction.rollback();
+//            ex.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//    }
+
+    public static Object getObjectById(String className, int id){
         session = HibernateUtil.getSessionFactory().openSession();
-        List<T> results = null;
+        List<Object> results = null;
         try {
             transaction = session.beginTransaction();
-            String hql = "from "+ className + "WHERE id = :id";
-            results = session.createQuery(hql).list();
+            String hql = "from " + className + " WHERE id = :id";
+            Query query = session.createQuery(hql);
+            query.setInteger("id", id);
+            results = query.list ();
             transaction.commit();
         } catch (HibernateException e) {
             transaction.rollback();
@@ -128,7 +147,7 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        return results.get(0);
     }
 
 }
