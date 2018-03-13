@@ -20,7 +20,7 @@ public class Runner {
         Guitar guitar2 = new Guitar("Corvette Hotrod", "Warwick", 5, guitarist2);
         DBHelper.save(guitar2);
 
-//        DBHelper.deleteById("Guitar", guitar1.getId());
+        DBHelper.deleteById("Guitar", guitar1.getId());
 
         guitar1.setManufacturer("Ibanez");
         DBHelper.update(guitar1);
@@ -30,10 +30,10 @@ public class Runner {
         Guitar foundguitar = DBHelper.getObjectById("Guitar",guitar2.getId());
 
         List<Guitar> guitars = DBHelper.getAll("Guitar");
-
         List<Guitarist> guitarist = DBHelper.getAll("Guitarist");
 
         List<Guitar> guitarsOfGuitarist1 = DBHelper.getGuitars(guitarist1.getId());
+
 
     }
 }

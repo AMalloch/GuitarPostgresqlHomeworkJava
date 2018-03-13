@@ -149,24 +149,23 @@ public class DBHelper {
         }
         return result;
     }
-
-//    +    public static <T> List<T> getObjectById(String className, int id){
-////        +        session = HibernateUtil.getSessionFactory().openSession();
-////        +        List<T> results = null;
-////        +        try {
-////            +            transaction = session.beginTransaction();
-////            +            String hql = "from "+ className + "WHERE id = :id";
-////            +            results = session.createQuery(hql).list();
-//                           query.setInteger("id", id);
-//                           results = query.list ();
-////            +            transaction.commit();
-////            +        } catch (HibernateException e) {
-////            +            transaction.rollback();
-////            +            e.printStackTrace();
-////            +        } finally {
-////            +            session.close();
-////            +        }
-////        +        return results;
-////        +    }
+//
+//    public static <T> List<T> getObjectById(String className, int id) {
+//        session = HibernateUtil.getSessionFactory().openSession();
+//        List<T> results = null;
+//        try {
+//            transaction = session.beginTransaction();
+//            String hql = "from " + className + "WHERE id = :id";
+//            results = session.createQuery(hql).list();
+//
+//            transaction.commit();
+//        } catch (HibernateException e) {
+//            transaction.rollback();
+//            e.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//        return results;
+//    }
 
 }
