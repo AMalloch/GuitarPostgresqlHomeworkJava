@@ -27,7 +27,7 @@ public class Runner {
 
         DBHelper.delete(guitar1);
 
-        Object foundguitar1 = DBHelper.getObjectById("Guitar", 2);
+        Guitar foundguitar = DBHelper.getObjectById("Guitar",guitar2.getId());
 
         List<Guitar> guitars = DBHelper.getAll("Guitar");
 
